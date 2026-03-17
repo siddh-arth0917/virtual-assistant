@@ -1,0 +1,191 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+/* BODY */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+    /* BACKGROUND IMAGE */
+    background: url("background.jpg") no-repeat center center/cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 3D PERSPECTIVE */
+    perspective: 1000px;
+}
+
+/* DARK OVERLAY */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+/* MAIN CONTAINER */
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* IMAGE */
+.image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.7),
+        0 0 25px rgba(0,255,200,0.4),
+        0 20px 40px rgba(0,0,0,0.5);
+
+    transition: 0.4s;
+    transform: translateZ(50px);
+}
+
+.image img:hover {
+    transform: scale(1.05) translateZ(70px);
+}
+
+/* TEXT */
+h1 {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: white;
+    transform: translateZ(40px);
+}
+
+/* ALIEN TEXT */
+#assistant-name {
+    font-weight: 800;
+    background: linear-gradient(90deg, #00f5ff, #00ff9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: glow 2s infinite alternate;
+}
+
+/* VA TEXT */
+#va {
+    color: #1bd4a7;
+}
+
+/* DESCRIPTION */
+.description {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    transform: translateZ(20px);
+}
+
+/* INPUT */
+.input-box {
+    margin-top: 25px;
+}
+
+.input-box input {
+    width: 320px;
+    padding: 16px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    color: white;
+
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 15px rgba(0,255,200,0.5);
+    transition: 0.3s;
+}
+
+.input-box input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.input-box input:focus {
+    box-shadow: 
+        0 0 15px #00f5ff,
+        0 0 30px #00ff9d;
+}
+
+/* FEATURES */
+.features {
+    margin-top: 50px;
+    text-align: center;
+    transform: translateZ(15px);
+}
+
+.features h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,255,200,0.3);
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,255,200,0.5);
+}
+
+.feature-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* ANIMATION */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00f5ff;
+    }
+    to {
+        text-shadow: 0 0 25px #00ff9d;
+    }
+}
